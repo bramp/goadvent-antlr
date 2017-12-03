@@ -35,7 +35,7 @@ func (l *calcListener) pop() int {
 
 // ExitMulDiv is called when exiting the MulDiv production.
 func (l *calcListener) ExitMulDiv(c *parser.MulDivContext) {
-	left, right := l.pop(), l.pop()
+	right, left := l.pop(), l.pop()
 
 	switch c.GetOp().GetTokenType() {
 	case parser.CalcParserMUL:
@@ -49,7 +49,7 @@ func (l *calcListener) ExitMulDiv(c *parser.MulDivContext) {
 
 // ExitAddSub is called when exiting the AddSub production.
 func (l *calcListener) ExitAddSub(c *parser.AddSubContext) {
-	left, right := l.pop(), l.pop()
+	right, left := l.pop(), l.pop()
 
 	switch c.GetOp().GetTokenType() {
 	case parser.CalcParserADD:
@@ -71,9 +71,10 @@ func (l *calcListener) ExitNumber(c *parser.NumberContext) {
 	l.push(i)
 }
 
+// calc takes a string expression and returns the evaluated result.
 func calc(input string) int {
 	// Setup the input
-	is := antlr.NewInputStream("1 + 2 * 3")
+	is := antlr.NewInputStream(input)
 
 	// Create the Lexer
 	lexer := parser.NewCalcLexer(is)
