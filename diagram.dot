@@ -1,0 +1,13 @@
+digraph Calc {
+    node [fontname="Helvetica", style="filled", colorscheme="pastel13", color=2];
+
+    e2 [label="expression", color=1]
+    e2->1;
+    e2->"ADD";
+    e2->e1;
+
+    e1 [label="expression", color=1];
+    e1->2 
+    e1->"MUL"
+    e1->3 
+}
