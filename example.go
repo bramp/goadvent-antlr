@@ -71,12 +71,7 @@ func (l *calcListener) ExitNumber(c *parser.NumberContext) {
 	l.push(i)
 }
 
-// ExitStart is called when exiting the start production.
-func (l *calcListener) ExitStart(c *parser.StartContext) {
-	fmt.Printf("The answer is: %d\n", l.pop())
-}
-
-func main() {
+func calc(input string) int {
 	// Setup the input
 	is := antlr.NewInputStream("1 + 2 * 3")
 
@@ -88,5 +83,12 @@ func main() {
 	p := parser.NewCalcParser(stream)
 
 	// Finally parse the expression (by walking the tree)
-	antlr.ParseTreeWalkerDefault.Walk(&calcListener{}, p.Start())
+	var listener calcListener
+	antlr.ParseTreeWalkerDefault.Walk(&listener, p.Start())
+
+	return listener.pop()
+}
+
+func main() {
+	fmt.Printf("The answer is: %d\n", calc("1 + 2 * 3"))
 }
