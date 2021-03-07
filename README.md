@@ -9,7 +9,7 @@ alias antlr='java -jar antlr-4.7-complete.jar'
 antlr -Dlanguage=Go -o parser Calc.g4
 ```
 
-FOr dowload all libs use
+For dowload all libs use
 ```shell
 go get -u
 ```
