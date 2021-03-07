@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 
-	"./parser"
+	"goadvent-antlr/parser"
 )
 
 func main() {

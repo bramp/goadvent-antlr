@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"./parser"
+	"goadvent-antlr/parser"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 )
 
