@@ -16,4 +16,4 @@ go get -u
 
 ## CAUTION
 
-This project use go module concepts 
+This project uses go modules
