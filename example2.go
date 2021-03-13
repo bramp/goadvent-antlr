@@ -2,7 +2,7 @@
 package main
 
 import (
-	"./parser"
+	"goadvent-antlr/parser"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 )
 

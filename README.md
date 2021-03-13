@@ -8,3 +8,12 @@ alias antlr='java -jar antlr-4.7-complete.jar'
 
 antlr -Dlanguage=Go -o parser Calc.g4
 ```
+
+For dowload all libs use
+```shell
+go get -u
+```
+
+## CAUTION
+
+This project uses go modules
